@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Token Radar ranks 178 pre-token DeFi protocols by implied launch value, priced from the market's own comparables in one frozen DefiLlama snapshot.">
+<meta name="page-type" content="software">
+<meta name="site-kind" content="software">
+<title>Token Radar: pre-token protocols ranked by implied launch value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Token Radar</span><span class="brand-sub">pre-token protocol index</span></div>
+    <div class="topmeta" id="asof">Snapshot 2026-11-14, DefiLlama protocol index</div>
+  </header>
+
+  <section class="hero">
+    <h1>Every protocol still waiting for its token, ranked by what its launch could be worth.</h1>
+    <p class="lede">The radar reads one frozen DefiLlama snapshot, finds the protocols that record no token, and prices each one from the market&rsquo;s own comparables.</p>
+    <div class="stats" id="stats">
+      <div class="stat"><b>40 / 40</b><span>Watchlist covered</span><em>every pre-token protocol at $50M+ TVL</em></div>
+      <div class="stat"><b>178</b><span>Protocols ranked</span><em>138 early finds below the floor</em></div>
+      <div class="stat"><b>0.19&times;</b><span>Market median mcap / TVL</span><em>across all live-token comparables</em></div>
+      <div class="stat"><b>24</b><span>Live tokens set aside</span><em>already trading, shown as comparables</em></div>
+    </div>
+    <p class="formula">implied = TVL &times; multiple(category) &times; growth &times; maturity &times; breadth</p>
+  </section>
+
+  <details class="modelbox">
+    <summary>How the value is set</summary>
+    <div class="modelgrid">
+      <div>
+        <ul class="modelnotes">
+          <li><b>Multiple.</b> Median market cap / TVL of the live-token protocols in the same category with at least $10M of TVL, each ratio capped at 3.0, shrunk toward the market median, and clamped to 0.02 to 1.50. A category with fewer than 3 such names takes the market median instead.</li>
+          <li><b>Growth.</b> 1 + 0.4 &times; 7-day TVL change, change clamped to -50% to +100%.</li>
+          <li><b>Maturity.</b> 0.70 + 0.30 &times; age / 3y. Longer-running protocols without a token count for more.</li>
+          <li><b>Breadth.</b> 1 + 0.04 per extra chain, capped at 4 extra chains.</li>
+        </ul>
+      </div>
+      <div>
+        <table class="comps" id="compstable">
+          <thead><tr><th>Category</th><th class="num">Live comps</th><th class="num">Median mcap / TVL</th><th class="num">Multiple used</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="fineprint" id="compnote"></p>
+      </div>
+    </div>
+  </details>
+
+  <section class="toolbar" aria-label="Board controls">
+    <div class="tabs" role="tablist">
+      <button id="tab-pre" class="tab active" role="tab" aria-selected="true">Pre-token board</button>
+      <button id="tab-live" class="tab" role="tab" aria-selected="false">Live tokens</button>
+    </div>
+    <div class="controls">
+      <label>Search <input id="q" type="search" placeholder="Name, category or chain" autocomplete="off"></label>
+      <label>Category <select id="cat"><option value="all">All categories</option></select></label>
+      <label>Chain <select id="chain"><option value="all">All chains</option></select></label>
+      <label class="check"><input id="watchonly" type="checkbox"> Watchlist only</label>
+      <label>Sort <select id="sort">
+        <option value="implied">Implied value</option>
+        <option value="tvl">TVL</option>
+        <option value="growth">7-day growth</option>
+        <option value="age">Age</option>
+        <option value="multiple">Multiple</option>
+      </select></label>
+    </div>
+    <p class="rowcount" id="rowcount">Showing the top 10 of 178 pre-token protocols. The full board loads with the page script.</p>
+  </section>
+
+  <main>
+    <div class="tablewrap">
+      <table class="board" id="board">
+        <thead><tr>
+          <th class="num">Rank</th><th>Protocol</th><th class="num">TVL</th><th class="num">7d</th><th class="num">Age</th><th class="num">Multiple</th><th class="num">Implied value</th><th>Token</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="num rank top">1</td><td><div class="pname">Steakhouse Financial<span class="wl">Watchlist</span></div><div class="psub">Risk Curators on Base, Ethereum +9</div></td><td class="num">$2.75B</td><td class="num down">-2.19%</td><td class="num">1.5y</td><td class="num mult">0.19&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:100%"></i></span><span class="valnum">$506.1M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank top">2</td><td><div class="pname">Gauntlet<span class="wl">Watchlist</span></div><div class="psub">Risk Curators on Base, Binance +12</div></td><td class="num">$1.58B</td><td class="num up">+5.64%</td><td class="num">1.5y</td><td class="num mult">0.19&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:59%"></i></span><span class="valnum">$299.1M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank top">3</td><td><div class="pname">Veda<span class="wl">Watchlist</span></div><div class="psub">Onchain Capital Allocator on Ink, Ethereum +11</div></td><td class="num">$1.56B</td><td class="num down">-8.29%</td><td class="num">1.7y</td><td class="num mult">0.19&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:57%"></i></span><span class="valnum">$288.3M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank">4</td><td><div class="pname">USDD<span class="wl">Watchlist</span></div><div class="psub">CDP on Tron, Ethereum +1</div></td><td class="num">$1.06B</td><td class="num down">-2.81%</td><td class="num">1.7y</td><td class="num mult">0.18&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:34%"></i></span><span class="valnum">$174.6M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank">5</td><td><div class="pname">Upshift<span class="wl">Watchlist</span></div><div class="psub">Onchain Capital Allocator on Ethereum, Stellar +13</div></td><td class="num">$499.1M</td><td class="num up">+8.31%</td><td class="num">1.9y</td><td class="num mult">0.19&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:20%"></i></span><span class="valnum">$100.8M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank">6</td><td><div class="pname">Bittensor dTAO<span class="wl">Watchlist</span></div><div class="psub">Dexs on Bittensor</div></td><td class="num">$376.0M</td><td class="num down">-6.56%</td><td class="num">56d</td><td class="num mult">0.30&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:16%"></i></span><span class="valnum">$79.6M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank">7</td><td><div class="pname">Nonce Capital<span class="wl">Watchlist</span></div><div class="psub">Risk Curators on Ethereum, Optimism</div></td><td class="num">$513.8M</td><td class="num down">-9.74%</td><td class="num">45d</td><td class="num mult">0.19&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:14%"></i></span><span class="valnum">$68.9M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank">8</td><td><div class="pname">OnRe<span class="wl">Watchlist</span></div><div class="psub">RWA on Solana</div></td><td class="num">$308.9M</td><td class="num up">+0.11%</td><td class="num">1.3y</td><td class="num mult">0.23&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:11%"></i></span><span class="valnum">$58.2M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank">9</td><td><div class="pname">OpenTrade<span class="wl">Watchlist</span></div><div class="psub">RWA on Avalanche, Ethereum +1</div></td><td class="num">$241.5M</td><td class="num down">-1.64%</td><td class="num">1.9y</td><td class="num mult">0.23&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:10%"></i></span><span class="valnum">$52.3M</span></span></td><td><span class="tok">no token</span></td></tr>
+          <tr><td class="num rank">10</td><td><div class="pname">Plume Vaults<span class="wl">Watchlist</span></div><div class="psub">RWA on Ethereum, Plume Mainnet +3</div></td><td class="num">$211.5M</td><td class="num down">-3.08%</td><td class="num">2.1y</td><td class="num mult">0.23&times;</td><td class="num"><span class="valcell"><span class="valbar"><i style="width:10%"></i></span><span class="valnum">$49.5M</span></span></td><td><span class="tok">no token</span></td></tr>
+        </tbody>
+      </table>
+      <table class="board live" id="liveboard" hidden>
+        <thead><tr>
+          <th class="num">Rank</th><th>Protocol</th><th class="num">TVL</th><th class="num">Market cap</th><th class="num">Mcap / TVL</th><th class="num">7d</th><th>Role</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="tablehint">Select any row for its model breakdown and farm plan. The board is sorted by the model&rsquo;s rank unless you choose another sort.</p>
+    <noscript><p class="tablehint">This board needs JavaScript to sort and filter. The top 10 rows above are the board as built, and the full ranked list ships beside this page as board data.</p></noscript>
+  </main>
+
+  <footer class="foot">
+    <p><b>What no token means here.</b> A protocol is listed as pre-token when its DefiLlama record carries no market cap, no CoinGecko id and no symbol. That is the record, not proof: a protocol on this board may still have a token its record does not carry. Wrapped, staked and bridged products of tokens that already trade are left out, as are versioned pools and exchanges.</p>
+    <p><b>What the implied value is.</b> A model&rsquo;s claim about what a token would be worth if the protocol&rsquo;s record stayed as it is. It does not predict whether or when a token is issued, and it is not investment advice. Farm steps name what a position costs and how long it takes; they never promise an airdrop.</p>
+    <p>Model radar-2-comps. Type: Host Grotesk and Atkinson Hyperlegible Mono (SIL Open Font License), self-hosted. Data: DefiLlama protocol index, snapshot 2026-11-14.</p>
+  </footer>
+</div>
+
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-card" id="drawercard"></div>
+</aside>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
